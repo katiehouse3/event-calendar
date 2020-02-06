@@ -65,6 +65,7 @@
      function processRequest(e) {
          if (xhr.readyState == 4 && xhr.status == 200) {
              data = JSON.parse(xhr.responseText);
+             console.log(data)
              /*~~~~~~~~~~~~~~~~~~~~~~~~~*/
              // Customize the event calendar
              // ONLY WORKS FROM 8AM - 1:30AM.
@@ -266,11 +267,11 @@
                                      'background-color:' + this.resultArr[i][j]["color"] + ';' +
                                      'border-left: 4px solid' + this.resultArr[i][j]["bcolor"] + ';' +
                                      'px"><span class="evt-txt">' + this.resultArr[i][j]["abbr_title"] + '</span>' +
-                                     '<span class="beg-txt">' + this.resultArr[i][j]["title_desc"] + "</span><br>" +
+                                     '<span class="beg-txt">' + this.resultArr[i][j]["title_desc"] + " - " +
+                                     this.resultArr[i][j]["host"] + "</span><br>" +
                                      this.resultArr[i][j]["start_time"] +
                                      this.resultArr[i][j]["end_time"] + ", " +
                                      this.resultArr[i][j]["location"] +
-
                                      '<span class="tooltiptext">' +
                                      "<b>" + this.resultArr[i][j]["title"] + ":</b><br>" +
                                      this.resultArr[i][j]["description"] + '</span></div></div>';
